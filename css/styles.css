@@ -1,0 +1,366 @@
+/*
+-------------First mobile design-----------
+
+=================
+TABLE OF CONTENTS
+=================
+
+	1. Root and background
+	
+	2. Header
+
+	3. Content
+
+		3.1 Hero section
+
+		3.2 Official art
+
+		3.3 By me
+
+	4. Footer
+
+	5. Animation keyframes
+
+	6. Media queries
+
+*/
+
+
+/*--1. Root and background--*/
+:root{
+	--1st-color: #840506;
+	--2nd-color: #2d1f1c;
+	--3rd-color: #b97d44;
+	--4th-color: #1d0f0d;
+	--5th-color: #140004;
+
+	--link-fontsize: clamp(1.5rem, 1.5vw, 2rem);
+	--h2-fontsize: clamp(2rem, 3.5vw, 3.5rem);
+}
+
+*{
+	max-width: 100%;
+	padding: 0;
+	margin: 0;
+	
+	font-family: 'roboto',sans-serif;
+	line-height: 1.5;
+
+	box-sizing: border-box;
+}
+
+body{
+	background: radial-gradient(var(--1st-color), var(--5th-color));
+}
+
+img{
+	width: 100%;
+	height: auto;
+}
+/*--Root and background end--*/
+
+
+/*--2. Header--*/
+header{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: var(--2nd-color);
+}
+
+.header__title{
+	color: #fff;
+	font-weight: 300;
+	font-size: clamp(2rem, 3vw, 4rem);
+}
+
+.header__link{
+	background-color: var(--4th-color);
+	padding: 0.5em;
+
+	color: #fff;
+	font-weight: 600;
+	font-size: var(--link-fontsize);
+	text-decoration: none;
+
+	transition: all 0.5s;
+}
+
+.header__link:hover{
+	display: block;
+
+	background-color: var(--3rd-color);
+
+	color: var(--2nd-color);
+}
+/*--Header end--*/
+
+
+/*--3.content--*/
+
+/*-----3.1 Hero section-----*/
+.hero{
+	animation-name: heroanimation;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.hero__img{
+	background-image: linear-gradient(rgba(0,0,0,0.5), 
+	rgba(0, 0, 0, 0.5)),
+	url("../img/hero-img.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 80% 0;
+
+	padding: 0 2rem;
+}
+
+.hero__title{
+	max-width: 800px;
+	padding: 25vh 0;
+
+	font-family: 'Beau rivage', cursive;
+	font-size: clamp(2.5rem, 4vw, 4rem);
+	color: #fff;
+
+	animation-name: other;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+.hero__paragraph{
+	font-size: calc(1rem + 1vw);
+	color: #fff;
+
+	animation-name: other;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+.btn-container{
+	display: flex;
+	justify-content: center;
+
+	animation-name: other;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+.btn{
+	display: inline-block;
+
+	background-color: var(--3rd-color);
+	padding: 0.25em 0.5em;
+
+	font-size: var(--link-fontsize);
+	color: var(--2nd-color);
+	text-decoration: none;
+
+	transition: all 0.5s;
+
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+
+.btn:hover{
+ 	background-color: var(--2nd-color);
+ 	color: var(--3rd-color);
+}
+/*-----Hero section end-----*/
+
+
+/*-----3.2 Official art-----*/
+.sections-title{
+	background-color: var(--2nd-color);
+	margin-top: 0.5em;
+	width: 100%;
+	padding: 0.5em;
+
+	font-size: var(--h2-fontsize);
+	color: #fff;
+	text-align: center;
+
+	animation-name: other;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+.official-grid{
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 32rem));
+	grid-gap: 1.5rem;
+
+	padding: 2em;
+
+	animation-name: other;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+.art__img{
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+
+.art__link{
+	display: block;
+
+	background-color: var(--3rd-color);
+	margin: -0.4em 0;
+	padding: 0.2em;
+
+	font-size: var(--link-fontsize);
+	font-weight: 500;
+	color: var(--2nd-color);
+	text-align: center;
+	text-decoration: none;
+
+	transition: all 0.5s;
+
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.art__link:hover{
+ 	background-color: var(--2nd-color);
+ 	color: var(--3rd-color);
+}
+
+.art__link--idk:hover{
+	background-color: var(--3rd-color);
+	color: var(--2nd-color);
+}
+/*-----Official art end-----*/
+
+
+/*-----3.3 By me-----*/
+.sections-title--byme{
+	margin: 0 auto;
+}
+
+.byme{
+	animation-name: other;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+.byme-imgs-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	padding: 1rem;
+}
+
+.byme__img{
+	margin: 0.5em;
+	width: clamp(20rem, 50%, 32rem);
+	height: auto;
+
+	border-radius: 30px;
+}
+/*-----By me end-----*/
+
+/*--Content end--*/
+
+
+/*--4. Footer--*/
+footer{
+	background-color: var(--2nd-color);
+	padding: 0.5em;
+}
+
+.footer__p{
+	color: var(--3rd-color);
+	font-size: var(1.2rem, 1.2vw, 1.5rem);
+	text-align: center;
+}
+/*--Footer end--*/
+
+
+/*--5. Animation keyframes--*/
+@keyframes heroanimation{
+	from{
+		height: 0%;
+		opacity: 0;
+	}
+	to{
+		height: 100%;
+		opacity: 1;
+	}
+}
+
+@keyframes other{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+
+/*--7. Media Queries*/
+
+/*-----Laptop and desktop-----*/
+@media screen and (min-width: 49em){
+
+	header{
+		flex-direction: row;
+	}
+
+	.btn-container{
+		justify-content: flex-end;
+	}
+
+	.stacked{
+		display: grid;
+	}
+
+	.stacked > *{
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+
+	.art__img{
+		border-radius: 30px;
+	}
+
+	.art__link{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background-color: rgba(0, 0, 0, .60);
+		color: #fff;
+		margin: auto auto;
+		width: 100%;
+		height: 100%;	
+
+		border-radius: 30px;
+
+		opacity: 0;
+	}
+
+	.art__link:hover{
+		background-color: rgba(0, 0, 0, .60);
+		color: #fff;
+
+		opacity: 1;
+	}
+
+	@keyframes heroanimation{
+		from{
+			width: 0%;
+			opacity: 0;
+		}
+		to{
+			width: 100%;
+			opacity: 1;
+		}
+	}
+}
